@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - TopstepJ Installation & Setup Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- header -->
+  <header class="border-b" style="background-color: #000000;">
+    <nav class="container py-2">
+      <div class="flex items-center justify-between">
+        <!-- logo -->
+        <div class="text-white font-bold text-xl">TopstepJ</div>
+
+        <!-- mobile toggle -->
+        <button class="visible-mobile text-white" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- desktop nav -->
+        <ul class="nav hidden-mobile">
+          <li><a href="index.html" class="nav-link text-white">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link text-white">How It Works</a></li>
+          <li><a href="features.html" class="nav-link text-white">Features</a></li>
+          <li><a href="strategies.html" class="nav-link text-white">Strategies</a></li>
+          <li><a href="demo.html" class="nav-link active text-white">Demo</a></li>
+          <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- mobile nav -->
+      <ul class="nav flex-col gap-2 mt-4 visible-mobile" style="display: none;">
+        <li><a href="index.html" class="nav-link text-white">Home</a></li>
+        <li><a href="how-it-works.html" class="nav-link text-white">How It Works</a></li>
+        <li><a href="features.html" class="nav-link text-white">Features</a></li>
+        <li><a href="strategies.html" class="nav-link text-white">Strategies</a></li>
+        <li><a href="demo.html" class="nav-link active text-white">Demo</a></li>
+        <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- hero -->
+    <section class="bg-dark text-white py-16">
+      <div class="container">
+        <h1 class="text-white mb-6">Demo: Getting TopstepJ Up and Running</h1>
+        <p class="text-xl text-white" style="max-width: 800px;">
+          This page walks through what you would need to install, configure, and run TopstepJ, plus a look at the interface once it is open.
+        </p>
+      </div>
+    </section>
+
+    <!-- requirements -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="mb-8">System Requirements</h2>
+
+        <div class="mx-auto" style="max-width: 900px;">
+          <p class="text-lg mb-6">
+            Before installing TopstepJ, it helps to know what kind of system it expects so you are not fighting performance issues the whole time.
+          </p>
+
+          <div class="card mb-6">
+            <h3 class="mb-4">Supported Operating Systems</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-2"><strong>Linux:</strong> Ubuntu 20.04+, Debian 11+, Fedora 35+, or equivalent distributions (64-bit)</li>
+            </ul>
+          </div>
+
+          <div class="card mb-6">
+            <h3 class="mb-4">Software Dependencies</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-2"><strong>Git:</strong> Version 2.30+ (for cloning the repository)</li>
+              <li class="mb-2"><strong>Java Runtime:</strong> JDK 17 or later</li>
+              <li class="mb-2"><strong>Node.js:</strong> Version 16.x or later (for web dashboard)</li>
+              <li class="mb-2"><strong>PostgreSQL:</strong> Version 13+ (for data persistence)</li>
+              <li class="mb-2"><strong>Redis:</strong> Version 6+ (for caching and message queuing)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="mb-4">Hardware Requirements</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-2"><strong>Processor:</strong> Dual-core CPU, 2.5 GHz or faster (I'd recommend quad-core for live trading)</li>
+              <li class="mb-2"><strong>Memory:</strong> Minimum 16 GB RAM (32 GB recommended if you're running multiple strategies)</li>
+              <li class="mb-2"><strong>Storage:</strong> At least 20 GB free disk space for app data and historical market data</li>
+              <li class="mb-2"><strong>Network:</strong> Stable internet connection with low latency (this is essential for live market data)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- interface -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">Platform Interface</h2>
+
+        <div class="mx-auto" style="max-width: 1440px;">
+          <p class="text-center text-lg mb-8" style="max-width: 700px; margin: 0 auto 2rem auto;">
+            After installation, the main thing you see is the trading interface: account info on one side, order entry on the other, and controls for how you want trades to be sent.
+          </p>
+
+          <!-- demo video -->
+          <div style="margin-bottom: 2rem;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+              <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                <source src="media/videos/Test Demo.mp4" type="video/mp4">
+                Your browser doesnt support the video tag.
+              </video>
+            </div>
+
+            <p class="text-center text-muted mt-4">
+              <strong>TopstepJ Platform Demo:</strong> Watch the platform in action with real time trading
+            </p>
+          </div>
+
+          <!-- feature text -->
+          <div class="card">
+            <h3 class="mb-4">Key Interface Components</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-3">
+                <strong>Accounts Panel:</strong> Live view of account balances, IDs, and trade counts so you always know where the account sits
+              </li>
+              <li class="mb-3">
+                <strong>Manual Order Entry:</strong> Order ticket for picking contracts, choosing order types (Market, Limit, Stop), and setting up bracket orders
+              </li>
+              <li class="mb-3">
+                <strong>Risk Management Parameters:</strong> Built in controls for position sizing, stop loss placement, and take profit targets—disciplined risk management on every trade
+              </li>
+              <li class="mb-3">
+                <strong>Trailing Stop Loss:</strong> Trailing stop options with adjustable distances to help lock in profits while trades are moving
+              </li>
+              <li class="mb-0">
+                <strong>Quick Execution Controls:</strong> Intuitive buy and sell buttons with real time order preview and confirmation for rapid execution when opportunities arise
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- install video -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">Installation Walkthrough Video</h2>
+
+        <div class="mx-auto" style="max-width: 1280px;">
+          <p class="text-center mb-6">
+            Watch this step by step video guide to see the complete installation process in action.
+          </p>
+
+          <!-- video container -->
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <source src="media/videos/Installation WalkThrough Video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="text-center text-muted mt-4">
+            Complete installation process from system setup to first login
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- config video -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">Initial Configuration Tutorial</h2>
+
+        <div class="mx-auto" style="max-width: 1280px;">
+          <p class="text-center mb-6">
+            Learn how to configure TopstepJ for your first trading session, including API setup and risk parameters.
+          </p>
+
+          <!-- video container -->
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <source src="media/videos/Api configuration walk through-2025-11-30_13.28.01.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="text-center text-muted mt-4">
+            Complete configuration guide including broker API integration and risk settings
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- run strategies -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-8">Running Your First Strategy</h2>
+
+        <div class="mx-auto" style="max-width: 1280px;">
+          <p class="text-center mb-6">
+            Watch how to deploy and monitor a trading strategy, from activation to live execution and performance tracking.
+          </p>
+
+          <!-- video container -->
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <source src="media/videos/Running your first strategy-2025-11-30_13.55.33.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="text-center text-muted mt-4">
+            Live demonstration of strategy activation, monitoring, and adjustment
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- analytics video -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">Analytics and Performance Review</h2>
+
+        <div class="mx-auto" style="max-width: 1280px;">
+          <p class="text-center mb-6">
+            Explore TopstepJ's analytics dashboard and learn how to interpret performance metrics, risk reports, and strategy analytics.
+          </p>
+
+          <!-- video container -->
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <source src="media/videos/analytics +-2025-11-30_13.54.20.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="text-center text-muted mt-4">
+            Complete guide to analytics features, performance metrics, and report generation
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- linux help -->
+    <section class="section">
+      <div class="container">
+        <h2 class="mb-8">Troubleshooting & Tips</h2>
+
+        <div class="mx-auto" style="max-width: 900px;">
+          <p class="text-lg mb-8">
+            Common issues and best practices for running TopstepJ on Linux.
+          </p>
+
+          <div class="card mb-6">
+            <h3 class="mb-4">Permissions and Security</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-2">Set proper file permissions: <code>chmod -R 755 topstepj/</code></li>
+              <li class="mb-2">Make sure PostgreSQL and Redis services are enabled to start on boot</li>
+              <li class="mb-2">Configure firewall rules using <code>ufw</code> or <code>iptables</code> if you need to</li>
+              <li class="mb-2">Use environment variables for sensitive credentials—don't hardcode them</li>
+            </ul>
+          </div>
+
+          <div class="card mb-6">
+            <h3 class="mb-4">Common Issues</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-2"><strong>Port conflicts:</strong> Make sure ports 5173 (frontend) and 8000 (backend) aren't being used by other applications. Check with <code>sudo lsof -i :5173</code> and <code>sudo lsof -i :8000</code></li>
+              <li class="mb-2"><strong>Frontend not loading:</strong> Verify the Vite dev server is running on port 5173 and check the console for errors</li>
+              <li class="mb-2"><strong>API connection errors:</strong> Make sure the backend server is running on port 8000 and both servers are started</li>
+              <li class="mb-2"><strong>Database connection errors:</strong> Verify PostgreSQL is running with <code>systemctl status postgresql</code></li>
+              <li class="mb-2"><strong>Redis connection errors:</strong> Verify Redis is running with <code>systemctl status redis</code></li>
+              <li class="mb-2"><strong>Out of memory errors:</strong> Monitor system resources with <code>htop</code> and make sure you meet the minimum 16GB RAM requirement</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="mb-4">Performance Optimization</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-2">Enable PostgreSQL connection pooling for better database performance</li>
+              <li class="mb-2">Configure Redis maxmemory settings based on available system RAM</li>
+              <li class="mb-2">Use <code>pm2</code> process manager for automatic restart and monitoring</li>
+              <li class="mb-2">Monitor system resources regularly using <code>htop</code>, <code>iotop</code>, and <code>nethogs</code></li>
+              <li class="mb-2">Consider setting up log rotation to prevent disk space issues</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- next steps -->
+    <section class="section bg-light">
+      <div class="container text-center">
+        <h2 class="mb-6">Ready to Explore More?</h2>
+        <p class="text-lg mb-8 mx-auto" style="max-width: 700px;">
+          Now that you have TopstepJ installed, the next step is exploring the architecture, features, and how strategies fit into the overall system.
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="strategies.html" class="btn btn-primary btn-lg">Explore Strategies</a>
+          <a href="how-it-works.html" class="btn btn-outline btn-lg">Learn Architecture</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Get Support</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container">
+
+      <!-- footer nav -->
+      <div class="flex flex-wrap gap-8 mb-8">
+        <div class="flex-1" style="min-width: 250px;">
+          <h4 class="text-white mb-4">TopstepJ</h4>
+          <p class="text-sm text-muted">
+            Proprietary algorithmic trading platform engineered for risk first systematic trading.
+          </p>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Platform</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="how-it-works.html" class="text-sm text-muted">How It Works</a></li>
+            <li><a href="features.html" class="text-sm text-muted">Features</a></li>
+            <li><a href="strategies.html" class="text-sm text-muted">Strategies</a></li>
+            <li><a href="demo.html" class="text-sm text-muted">Demo</a></li>
+          </ul>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Resources</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="#" class="text-sm text-muted">Documentation</a></li>
+            <li><a href="#" class="text-sm text-muted">GitHub Repository</a></li>
+            <li><a href="contact.html" class="text-sm text-muted">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- disclaimers -->
+      <div class="border-t pt-8" style="border-color: rgba(255, 255, 255, 0.1);">
+        <div class="mb-6">
+          <h5 class="text-white mb-3 font-semibold">Important Disclaimers</h5>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Educational Use Only:</strong> TopstepJ is provided as an educational tool for learning about algorithmic trading, risk management, and systematic trading approaches. It is not intended as professional trading software for live market trading without proper understanding, testing, and risk assessment.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">No Guarantee of Profits:</strong> Trading futures and derivatives involves substantial risk of loss. There is no guarantee that using TopstepJ or any trading strategy will result in profitable trades. Past performance does not guarantee future results.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Trading Risk Disclosure:</strong> Futures and options trading involves significant risk of loss and is not suitable for all investors. The high degree of leverage that is often obtainable in futures and options trading can work against you as well as for you. The use of leverage can lead to large losses as well as gains. You should carefully consider whether such trading is suitable for you in light of your financial condition.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Not Financial Advice:</strong> Nothing on this website or in the TopstepJ platform constitutes financial, investment, legal, or tax advice. The content is provided for informational and educational purposes only. You should consult with qualified professionals before making any financial decisions or engaging in trading activities.
+          </div>
+
+          <div class="text-sm text-muted">
+            <strong class="text-white">No Liability:</strong> The creators and contributors of TopstepJ are not liable for any trading losses, damages, or other consequences arising from the use of this software or information. By using TopstepJ, you acknowledge and accept all risks associated with futures trading.
+          </div>
+        </div>
+
+        <!-- copyright -->
+        <div class="text-center text-sm text-muted pt-6" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <p>&copy; 2025 TopstepJ. Proprietary software for educational purposes.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

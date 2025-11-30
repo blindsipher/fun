@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - TopstepJ Trading Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- header -->
+  <header class="border-b" style="background-color: #000000;">
+    <nav class="container py-2">
+      <div class="flex items-center justify-between">
+        <!-- logo -->
+        <div class="text-white font-bold text-xl">TopstepJ</div>
+
+        <!-- mobile toggle -->
+        <button class="visible-mobile text-white" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- desktop nav -->
+        <ul class="nav hidden-mobile">
+          <li><a href="index.html" class="nav-link text-white">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link text-white">How It Works</a></li>
+          <li><a href="features.html" class="nav-link active text-white">Features</a></li>
+          <li><a href="strategies.html" class="nav-link text-white">Strategies</a></li>
+          <li><a href="demo.html" class="nav-link text-white">Demo</a></li>
+          <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- mobile nav -->
+      <ul class="nav flex-col gap-2 mt-4 visible-mobile" style="display: none;">
+        <li><a href="index.html" class="nav-link text-white">Home</a></li>
+        <li><a href="how-it-works.html" class="nav-link text-white">How It Works</a></li>
+        <li><a href="features.html" class="nav-link active text-white">Features</a></li>
+        <li><a href="strategies.html" class="nav-link text-white">Strategies</a></li>
+        <li><a href="demo.html" class="nav-link text-white">Demo</a></li>
+        <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- page header -->
+    <section class="bg-dark text-white py-12">
+      <div class="container">
+        <h1 class="text-white mb-4">Platform Features</h1>
+        <p class="text-xl text-white" style="max-width: 800px;">
+          TopstepJ is something I'm building around a simple idea: protect the account first, then worry about the strategy. It helps keep you from over-trading while still letting you test and run your algorithmic ideas in a consistent way.
+        </p>
+      </div>
+    </section>
+
+    <!-- feature categories -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-12">Feature Overview by Category</h2>
+
+        <div class="grid gap-8" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+          <!-- risk features -->
+          <div class="card">
+            <h3 class="mb-4">Risk Management</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-3">Daily loss limits with automatic position closure</li>
+              <li class="mb-3">Maximum position size enforcement per instrument</li>
+              <li class="mb-3">Real-time portfolio exposure tracking</li>
+              <li class="mb-3">Session-based trading time filters</li>
+              <li class="mb-3">Slippage monitoring and error handling</li>
+              <li class="mb-3">Maximum drawdown controls</li>
+              <li class="mb-3">Order rate limiting and throttling</li>
+              <li class="mb-3">Risk-adjusted position sizing</li>
+            </ul>
+          </div>
+
+          <!-- strategy features -->
+          <div class="card">
+            <h3 class="mb-4">Strategy Orchestration</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-3">Plugin-based strategy architecture</li>
+              <li class="mb-3">Multi-strategy portfolio management</li>
+              <li class="mb-3">Strategy-level risk allocation</li>
+              <li class="mb-3">Dynamic strategy activation/deactivation</li>
+              <li class="mb-3">Strategy correlation analysis</li>
+              <li class="mb-3">Signal aggregation and conflict resolution</li>
+              <li class="mb-3">Hot-swappable strategy modules</li>
+              <li class="mb-3">Strategy performance attribution</li>
+            </ul>
+          </div>
+
+          <!-- smc ml -->
+          <div class="card">
+            <h3 class="mb-4">SMC & ML Integration</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-3">Smart Money Concepts (SMC) signal detection</li>
+              <li class="mb-3">Order block identification and tracking</li>
+              <li class="mb-3">Fair value gap analysis</li>
+              <li class="mb-3">Machine learning model integration framework</li>
+              <li class="mb-3">Feature engineering pipeline</li>
+              <li class="mb-3">Model versioning and A/B testing</li>
+              <li class="mb-3">Prediction confidence scoring</li>
+              <li class="mb-3">Model drift detection</li>
+            </ul>
+          </div>
+
+          <!-- analytics features -->
+          <div class="card">
+            <h3 class="mb-4">Analytics and Reporting</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-3">Real-time strategy performance metrics</li>
+              <li class="mb-3">Historical trade analytics and backtesting</li>
+              <li class="mb-3">Win rate, profit factor, and Sharpe ratio tracking</li>
+              <li class="mb-3">Equity curve visualization</li>
+              <li class="mb-3">Daily, weekly, and monthly P&L reports</li>
+              <li class="mb-3">Risk-adjusted return metrics</li>
+              <li class="mb-3">Trade execution quality analysis</li>
+              <li class="mb-3">Customizable performance dashboards</li>
+            </ul>
+          </div>
+
+          <!-- dev features -->
+          <div class="card">
+            <h3 class="mb-4">Developer Experience</h3>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-3">Well-documented REST API</li>
+              <li class="mb-3">WebSocket real-time data streaming</li>
+              <li class="mb-3">Strategy SDK with examples</li>
+              <li class="mb-3">Event-driven middleware hooks</li>
+              <li class="mb-3">Comprehensive testing utilities</li>
+              <li class="mb-3">Docker-based deployment</li>
+              <li class="mb-3">Extensive logging and debugging tools</li>
+              <li class="mb-3">Close-source codebase with community contributions</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- risk table -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-8">Risk Controls: TopstepJ vs. Typical Retail Trading</h2>
+        <p class="text-center text-lg mb-12 mx-auto" style="max-width: 800px;">
+          This section compares how TopstepJ handles risk versus how most people usually trade their own accounts. The goal is to let rules and automation step in where emotions normally take over.
+        </p>
+
+        <div class="table-container">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Risk Control Topic</th>
+                <th>TopstepJ Approach</th>
+                <th>Typical Retail Trader</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="topic-cell">Daily Loss Limits</td>
+                <td class="topstepj-cell">
+                  <strong>Automatic enforcement.</strong> You set a daily loss limit for the account and the risk layer watches it in real time. When that number is hit, the platform closes your positions and blocks any new trades for the rest of the session.
+                </td>
+                <td class="retail-cell">
+                  <strong>Manual discipline required.</strong> Most retail traders just pick a number in their head and then move it or ignore it after a bad streak, which is how big one-day blow-ups usually happen.
+                </td>
+              </tr>
+              <tr>
+                <td class="topic-cell">Position Sizing Rules</td>
+                <td class="topstepj-cell">
+                  <strong>Systematic and configurable.</strong> Position size comes from simple rules: risk per trade, account size, and how volatile the market is. The platform also hard-caps the max size per instrument right when you send the order.
+                </td>
+                <td class="retail-cell">
+                  <strong>Arbitrary or emotion-driven.</strong> A lot of people just “go bigger” when they feel confident or want to make back losses fast, which usually means too much size and blown accounts.
+                </td>
+              </tr>
+              <tr>
+                <td class="topic-cell">Session & Time Filters</td>
+                <td class="topstepj-cell">
+                  <strong>Configured and automated.</strong> You tell the platform what sessions you actually want to trade (RTH, ETH, or custom hours) and it blocks orders outside that window, including times that are usually illiquid or extra volatile.
+                </td>
+                <td class="retail-cell">
+                  <strong>No systematic controls.</strong> Most retail traders just hop in whenever they feel like it, even during news spikes or dead zones, which is where you usually get bad fills and more slippage.
+                </td>
+              </tr>
+              <tr>
+                <td class="topic-cell">Slippage & Error Handling</td>
+                <td class="topstepj-cell">
+                  <strong>Monitored and mitigated.</strong> Orders are checked before they go out, and the platform keeps track of how far actual fills are from what you asked for. If slippage or connection issues get out of hand, it can pause the strategy and flatten positions.
+                </td>
+                <td class="retail-cell">
+                  <strong>Often ignored or unnoticed.</strong> Most people never really measure slippage or execution errors. They just accept bad fills and keep trading, letting small problems stack into bigger losses.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-center text-muted mt-8">
+          The whole idea is that TopstepJ keeps you inside the rules you set, instead of relying on willpower in the middle of a trading day.
+        </p>
+      </div>
+    </section>
+
+    <!-- roadmap table -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">Complete Feature List & Roadmap</h2>
+        <p class="text-center text-lg mb-12 mx-auto" style="max-width: 800px;">
+          This table shows which features already work in TopstepJ and which ones are still planned. I use it as a simple roadmap to keep track of what’s done and what’s still on the to-do list.
+        </p>
+
+        <div class="table-container">
+          <table class="feature-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Description</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+                <!-- core -->
+              <tr>
+                <td class="feature-name">Event-Driven Architecture</td>
+                <td>Clean event pipeline for market data, normalization, risk, strategy, and order routing.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Market Data Normalization</td>
+                <td>Standardized market data format across multiple data providers and instruments.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Risk Middleware Core</td>
+                <td>Central risk validation layer that all events must pass through before execution.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Daily Loss Limit Enforcement</td>
+                <td>Automatic position closure and trading halt when daily loss limit is reached.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Position Size Controls</td>
+                <td>Maximum position size enforcement per instrument based on risk parameters.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Session-Based Time Filters</td>
+                <td>Restrict trading to specific market sessions (RTH, ETH, custom hours).</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Slippage Monitoring</td>
+                <td>Real-time tracking of execution slippage with alerts and thresholds.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+
+                <!-- strategy -->
+              <tr>
+                <td class="feature-name">Plugin-Based Strategy System</td>
+                <td>Modular architecture for loading and managing custom trading strategies.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Multi-Strategy Portfolio</td>
+                <td>Run multiple strategies simultaneously with independent risk allocations.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Strategy Hot-Swapping</td>
+                <td>Dynamically activate or deactivate strategies without restarting the platform.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Built-In Base Strategies</td>
+                <td>Includes momentum, mean reversion, and trend-following strategy templates.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Strategy Backtesting Engine</td>
+                <td>Historical simulation of strategies with accurate fill modeling and statistics.</td>
+                <td><span class="badge badge-development">In Development</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Strategy Optimization Framework</td>
+                <td>Automated parameter optimization using walk-forward analysis and genetic algorithms.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+
+                <!-- smc ml -->
+              <tr>
+                <td class="feature-name">Smart Money Concepts (SMC) Module</td>
+                <td>Detection of institutional order flow patterns, order blocks, and fair value gaps.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Order Block Identification</td>
+                <td>Automatic identification and tracking of bullish and bearish order blocks.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Fair Value Gap Analysis</td>
+                <td>Detection and tracking of imbalances for potential retracement opportunities.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">ML Model Integration API</td>
+                <td>Framework for integrating scikit-learn, TensorFlow, and PyTorch models.</td>
+                <td><span class="badge badge-development">In Development</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Feature Engineering Pipeline</td>
+                <td>Automated feature extraction from market data for ML model training.</td>
+                <td><span class="badge badge-development">In Development</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Model Versioning & A/B Testing</td>
+                <td>Test multiple ML model versions simultaneously to identify best performers.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Model Drift Detection</td>
+                <td>Automatic monitoring of model performance degradation and alerts.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+
+                <!-- analytics -->
+              <tr>
+                <td class="feature-name">Real-Time Performance Metrics</td>
+                <td>Live tracking of strategy and account performance metrics.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Trade Execution Analytics</td>
+                <td>Analysis of fill quality, slippage, and latency per strategy.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Equity Curve Visualization</td>
+                <td>Graphical representation of account and strategy equity over time.</td>
+                <td><span class="badge badge-development">In Development</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Win Rate & Profit Factor Reports</td>
+                <td>Detailed reporting of win rate, profit factor, and expectancy per strategy.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Sharpe Ratio & Risk Metrics</td>
+                <td>Calculation of Sharpe ratio, Sortino ratio, and maximum drawdown.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Customizable Dashboards</td>
+                <td>Web-based dashboards for monitoring positions, P&L, and strategy performance.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Automated Performance Reports</td>
+                <td>Scheduled email reports with daily, weekly, and monthly performance summaries.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+
+                <!-- dev -->
+              <tr>
+                <td class="feature-name">REST API</td>
+                <td>Full-featured API for account management, order submission, and data retrieval.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">WebSocket Streaming API</td>
+                <td>Real-time streaming of market data, positions, and order updates.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Strategy SDK</td>
+                <td>Python SDK with examples and templates for creating custom strategies.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Event Middleware Hooks</td>
+                <td>Pluggable hooks for custom logic at each stage of the event pipeline.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Comprehensive Testing Utilities</td>
+                <td>Unit and integration testing tools for strategy and middleware development.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Docker Deployment</td>
+                <td>Containerized deployment with Docker Compose for easy setup.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Kubernetes Support</td>
+                <td>Helm charts and deployment manifests for scalable production deployments.</td>
+                <td><span class="badge badge-development">In Development</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Plugin Marketplace</td>
+                <td>Community marketplace for sharing and distributing custom strategies and middleware.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+
+                <!-- advanced -->
+              <tr>
+                <td class="feature-name">Multi-Account Management</td>
+                <td>Manage multiple trading accounts from a single platform instance.</td>
+                <td><span class="badge badge-development">In Development</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Order Rate Limiting</td>
+                <td>Throttle order submission to comply with broker API rate limits.</td>
+                <td><span class="badge badge-available">Available</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Failover & High Availability</td>
+                <td>Redundant system design with automatic failover for production environments.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Advanced Order Types</td>
+                <td>Support for iceberg, TWAP, VWAP, and other algorithmic order types.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Cross-Asset Support</td>
+                <td>Extend platform to support equities, forex, and crypto in addition to futures.</td>
+                <td><span class="badge badge-planned">Planned</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-center text-muted mt-8">
+          If there’s something you don’t see here, you can suggest it on GitHub and treat it like a feature request for a future update.
+        </p>
+      </div>
+    </section>
+
+    <!-- images -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-8">Feature Screenshots</h2>
+
+        <div class="grid gap-8" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <div>
+            <img
+              src="media/images/Risk Dashboard.png"
+              alt="TopstepJ risk management dashboard showing daily loss limits and position sizes"
+              class="rounded-lg shadow-md w-full mb-4"
+              style="height: 250px; object-fit: cover;"
+            >
+            <h4 class="text-center">Risk Management Dashboard</h4>
+            <p class="text-center text-muted">Live view of risk numbers and overall exposure</p>
+          </div>
+
+          <div>
+            <img
+              src="media/images/Strategy analytics.png"
+              alt="Strategy performance analytics showing equity curves and metrics"
+              class="rounded-lg shadow-md w-full mb-4"
+              style="height: 250px; object-fit: cover;"
+            >
+            <h4 class="text-center">Strategy Analytics</h4>
+            <p class="text-center text-muted">Breakdown of how each strategy has been performing</p>
+          </div>
+
+          <div>
+            <img
+              src="media/images/SMC config.png"
+              alt="Smart Money Concepts visualization with order blocks and fair value gaps"
+              class="rounded-lg shadow-md w-full mb-4"
+              style="height: 250px; object-fit: cover;"
+            >
+            <h4 class="text-center">SMC Analysis Tools</h4>
+            <p class="text-center text-muted">Tools for spotting order blocks and fair value gaps</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- cta -->
+    <section class="section bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="text-white mb-6">Ready to Trade with Discipline?</h2>
+        <p class="text-lg mb-8 mx-auto text-white" style="max-width: 700px;">
+          Try out more structured, risk-managed trading with TopstepJ. Start with the demo and see how the platform steps in and shuts things down when your own rules say you're done for the day.
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="demo.html" class="btn btn-primary btn-lg">View Demo</a>
+          <a href="strategies.html" class="btn btn-outline btn-lg" style="border-color: white; color: white;">Explore Strategies</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container">
+
+      <!-- footer nav -->
+      <div class="flex flex-wrap gap-8 mb-8">
+        <div class="flex-1" style="min-width: 250px;">
+          <h4 class="text-white mb-4">TopstepJ</h4>
+          <p class="text-sm text-muted">
+            Close-source algorithmic trading platform engineered for risk-first systematic trading.
+          </p>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Platform</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="how-it-works.html" class="text-sm text-muted">How It Works</a></li>
+            <li><a href="features.html" class="text-sm text-muted">Features</a></li>
+            <li><a href="strategies.html" class="text-sm text-muted">Strategies</a></li>
+            <li><a href="demo.html" class="text-sm text-muted">Demo</a></li>
+          </ul>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Resources</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="#" class="text-sm text-muted">Documentation</a></li>
+            <li><a href="#" class="text-sm text-muted">GitHub Repository</a></li>
+            <li><a href="contact.html" class="text-sm text-muted">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- disclaimers -->
+      <div class="border-t pt-8" style="border-color: rgba(255, 255, 255, 0.1);">
+        <div class="mb-6">
+          <h5 class="text-white mb-3 font-semibold">Important Disclaimers</h5>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Educational Use Only:</strong> TopstepJ is provided as an educational tool for learning about algorithmic trading, risk management, and systematic trading approaches. It is not intended as professional trading software for live market trading without proper understanding, testing, and risk assessment.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">No Guarantee of Profits:</strong> Trading futures and derivatives involves substantial risk of loss. There is no guarantee that using TopstepJ or any trading strategy will result in profitable trades. Past performance does not guarantee future results.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Trading Risk Disclosure:</strong> Futures and options trading involves significant risk of loss and is not suitable for all investors. The high degree of leverage that is often obtainable in futures and options trading can work against you as well as for you. The use of leverage can lead to large losses as well as gains. You should carefully consider whether such trading is suitable for you in light of your financial condition.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Not Financial Advice:</strong> Nothing on this website or in the TopstepJ platform constitutes financial, investment, legal, or tax advice. The content is provided for informational and educational purposes only. You should consult with qualified professionals before making any financial decisions or engaging in trading activities.
+          </div>
+
+          <div class="text-sm text-muted">
+            <strong class="text-white">No Liability:</strong> The creators and contributors of TopstepJ are not liable for any trading losses, damages, or other consequences arising from the use of this software or information. By using TopstepJ, you acknowledge and accept all risks associated with futures trading.
+          </div>
+        </div>
+
+        <!-- copyright -->
+        <div class="text-center text-sm text-muted pt-6" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <p>&copy; 2025 TopstepJ. Close-source project for educational purposes.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
