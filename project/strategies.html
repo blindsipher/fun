@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="trading strategies, algorithmic strategies, strategy configuration, custom trading strategies, SMC strategies, machine learning trading, strategy plugins, risk management strategies, entry exit logic, strategy templates">
+  <title>Strategies - TopstepJ Trading Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- header -->
+  <header class="border-b" style="background-color: #000000;">
+    <nav class="container py-2">
+      <div class="flex items-center justify-between">
+        <!-- logo -->
+        <div class="text-white font-bold text-xl">TopstepJ</div>
+
+        <!-- mobile toggle -->
+        <button class="visible-mobile text-white" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- desktop nav -->
+        <ul class="nav hidden-mobile">
+          <li><a href="index.html" class="nav-link text-white">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link text-white">How It Works</a></li>
+          <li><a href="features.html" class="nav-link text-white">Features</a></li>
+          <li><a href="strategies.html" class="nav-link active text-white">Strategies</a></li>
+          <li><a href="demo.html" class="nav-link text-white">Demo</a></li>
+          <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- mobile nav -->
+      <ul class="nav flex-col gap-2 mt-4 visible-mobile" style="display: none;">
+        <li><a href="index.html" class="nav-link text-white">Home</a></li>
+        <li><a href="how-it-works.html" class="nav-link text-white">How It Works</a></li>
+        <li><a href="features.html" class="nav-link text-white">Features</a></li>
+        <li><a href="strategies.html" class="nav-link active text-white">Strategies</a></li>
+        <li><a href="demo.html" class="nav-link text-white">Demo</a></li>
+        <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- hero -->
+    <section class="bg-dark text-white py-16">
+      <div class="container">
+        <h1 class="text-white mb-6">Strategy Configuration and Development</h1>
+        <p class="text-xl text-white" style="max-width: 900px;">
+          This part of the project focuses on how strategies are set up and managed. You can work with built-in examples, tweak templates, or plug in your own logic, all while staying inside the same risk framework.
+        </p>
+      </div>
+    </section>
+
+    <!-- intro -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">Why Use TopstepJ’s Strategy System?</h2>
+
+        <div class="mx-auto" style="max-width: 900px;">
+          <p class="text-lg mb-6">
+            Every strategy in TopstepJ runs through the same risk core. That means position size rules, daily loss limits, and session filters are always checked, no matter what style of logic you are using.
+          </p>
+
+          <p class="text-lg">
+            You can start from simple ideas like moving average crossovers or go into Smart Money Concepts and machine learning models. The main point is that the framework handles the plumbing and risk checks so you can focus on the strategy itself.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- strategy guide -->
+    <section class="section">
+      <div class="container">
+        <h2 class="mb-8">Strategy Configuration Guide</h2>
+
+        <div class="mx-auto" style="max-width: 1000px;">
+
+          <!-- config overview -->
+          <div class="mb-12">
+            <h3 class="mb-4">Overview</h3>
+            <p class="mb-6">
+              Each strategy in TopstepJ is configured through a JSON or YAML configuration file that defines parameters, risk settings, entry/exit logic, and analytics preferences. The platform loads these at startup and initializes each strategy with its own isolated state and risk context.
+            </p>
+
+            <!-- config image -->
+            <div class="mb-6">
+              <img
+                src="media/images/Strategy Configuration Screen.png"
+                alt="Strategy configuration interface showing parameter inputs and risk settings"
+                class="rounded-lg shadow-lg w-full"
+              >
+              <p class="text-sm text-muted mt-3 text-center">
+                Example: Strategy configuration screen with parameter inputs, risk settings, and validation
+              </p>
+            </div>
+          </div>
+
+          <!-- params -->
+          <div class="mb-12">
+            <h3 class="mb-4">Example Strategy Parameters</h3>
+            <p class="mb-4">
+              A typical moving average crossover strategy might include the following parameters:
+            </p>
+
+            <div class="card mb-6">
+              <div class="card-body">
+                <pre style="background-color: #f8fafc; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-family: monospace; font-size: 0.875rem; line-height: 1.5;">{
+  "strategyName": "MovingAverageCrossover",
+  "enabled": true,
+  "parameters": {
+    "fastPeriod": 10,
+    "slowPeriod": 50,
+    "instrument": "ES",
+    "timeframe": "5m",
+    "entrySignalThreshold": 0.75
+  },
+  "riskSettings": {
+    "maxPositionSize": 2,
+    "stopLossPercent": 0.5,
+    "takeProfitPercent": 1.0,
+    "maxDailyLoss": 500,
+    "sessionFilters": ["RTH"]
+  },
+  "analytics": {
+    "enablePerformanceTracking": true,
+    "logSignals": true,
+    "recordEquityCurve": true
+  }
+}</pre>
+              </div>
+            </div>
+
+            <!-- params image -->
+            <div class="mb-6">
+              <img
+                src="media/images/Parameter Configuration Screen.png"
+                alt="Parameter configuration panel with fields for fast period, slow period, and thresholds"
+                class="rounded-lg shadow-lg w-full"
+              >
+              <p class="text-sm text-muted mt-3 text-center">
+                Parameter configuration panel for moving average crossover strategy
+              </p>
+            </div>
+          </div>
+
+          <!-- risk -->
+          <div class="mb-12">
+            <h3 class="mb-4">Risk Settings Configuration</h3>
+            <p class="mb-4">
+              Risk settings are mandatory for every strategy and get enforced by the platform's risk middleware:
+            </p>
+
+            <ul style="list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
+              <li class="mb-3">
+                <strong>Max Position Size:</strong> Maximum number of contracts the strategy can hold at once
+              </li>
+              <li class="mb-3">
+                <strong>Stop Loss Percent:</strong> Automatic stop loss percentage relative to entry price
+              </li>
+              <li class="mb-3">
+                <strong>Take Profit Percent:</strong> Automatic take profit percentage relative to entry price
+              </li>
+              <li class="mb-3">
+                <strong>Max Daily Loss:</strong> Maximum dollar loss allowed per day before strategy is disabled
+              </li>
+              <li class="mb-3">
+                <strong>Session Filters:</strong> Allowed trading sessions (e.g., RTH, ETH, Asian session)
+              </li>
+            </ul>
+
+            <!-- risk image -->
+            <div class="mb-6">
+              <img
+                src="media/images/Risk Settings Configuration.png"
+                alt="Risk settings interface showing stop loss, take profit, and position size controls"
+                class="rounded-lg shadow-lg w-full"
+              >
+              <p class="text-sm text-muted mt-3 text-center">
+                Risk settings configuration with visual controls for stop loss, take profit, and session filters
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- base strategies -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="mb-8">Built-In Base Strategies</h2>
+
+        <div class="mx-auto" style="max-width: 1100px;">
+          <p class="text-lg mb-8">
+            TopstepJ includes several example strategies that cover different styles of trading. You can use them as starting points, see how they are wired into the platform, and then adjust or build your own versions.
+          </p>
+
+          <!-- strategy list -->
+          <ul style="list-style: none; padding: 0;">
+
+            <!-- strat 1 ma -->
+            <li class="card mb-6">
+              <div class="card-body">
+                <h3 class="mb-3">Moving Average Crossover</h3>
+              </div>
+            </li>
+
+            <!-- strat 2 rsi -->
+            <li class="card mb-6">
+              <div class="card-body">
+                <h3 class="mb-3">Mean Reversion RSI</h3>
+              </div>
+            </li>
+
+            <!-- strat 3 breakout -->
+            <li class="card mb-6">
+              <div class="card-body">
+                <h3 class="mb-3">Breakout with Volume Confirmation</h3>
+              </div>
+            </li>
+
+            <!-- strat 4 smc -->
+            <li class="card mb-6">
+              <div class="card-body">
+                <h3 class="mb-3">Smart Money Concepts (SMC)</h3>
+              </div>
+            </li>
+
+            <!-- strat 5 vwap -->
+            <li class="card mb-6">
+              <div class="card-body">
+                <h3 class="mb-3">VWAP Reversion</h3>
+              </div>
+            </li>
+
+            <!-- strat 6 ml -->
+            <li class="card mb-6">
+              <div class="card-body">
+                <h3 class="mb-3">Machine Learning Classifier</h3>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- strategy features -->
+    <section class="section">
+      <div class="container">
+        <h2 class="mb-8">Strategy Features & Architecture</h2>
+
+        <div class="mx-auto" style="max-width: 1000px;">
+
+          <!-- entries exits -->
+          <div class="mb-12">
+            <h3 class="mb-4">Entry & Exit Logic</h3>
+            <p class="mb-4">
+              Each strategy follows the same general pattern for generating signals, getting into trades, and getting out. That keeps behavior consistent and makes it easier for the platform to apply risk rules in the same way everywhere.
+            </p>
+
+            <div class="card mb-6">
+              <div class="card-body">
+                <h4 class="font-semibold mb-3">Entry Logic Flow:</h4>
+                <ol style="list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem;">
+                  <li class="mb-2"><strong>Market Data Event:</strong> Strategy receives normalized market data (price, volume, indicators)</li>
+                  <li class="mb-2"><strong>Signal Generation:</strong> Strategy applies its logic to generate buy/sell signals with confidence scores</li>
+                  <li class="mb-2"><strong>Risk Validation:</strong> Signal is passed to risk middleware for position size, daily loss, and session validation</li>
+                  <li class="mb-2"><strong>Order Execution:</strong> If approved, order is routed to broker with attached stop loss and take profit levels</li>
+                  <li class="mb-2"><strong>Position Tracking:</strong> Position is added to strategy's active position tracking and analytics</li>
+                </ol>
+
+                <h4 class="font-semibold mb-3 mt-6">Exit Logic Flow:</h4>
+                <ol style="list-style: decimal; padding-left: 1.5rem;">
+                  <li class="mb-2"><strong>Exit Signal Detection:</strong> Strategy monitors for exit conditions (target hit, stop hit, time-based, reversal signal)</li>
+                  <li class="mb-2"><strong>Risk-Adjusted Exit:</strong> Risk middleware can override exit if trailing stops or time filters require earlier exit</li>
+                  <li class="mb-2"><strong>Order Execution:</strong> Exit order is sent to broker and position is closed</li>
+                  <li class="mb-2"><strong>Performance Recording:</strong> Trade outcome (P&L, duration, slippage) is recorded in analytics database</li>
+                  <li class="mb-2"><strong>State Update:</strong> Strategy state is updated and made available for analysis and model retraining</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- risk analytics -->
+          <div class="mb-12">
+            <h3 class="mb-4">Risk Hooks & Analytics Per Strategy</h3>
+            <p class="mb-4">
+              Each strategy has its own risk context and its own stats. That lets you compare them side by side and see which ideas work better in different types of markets.
+            </p>
+
+            <div class="card mb-6">
+              <div class="card-body">
+                <h4 class="font-semibold mb-3">Risk Hooks:</h4>
+                <ul style="list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem;">
+                  <li class="mb-2">
+                    <strong>Pre-Entry Hook:</strong> Validates position size, daily loss limit, and available margin before entry
+                  </li>
+                  <li class="mb-2">
+                    <strong>Position Monitoring Hook:</strong> Continuously monitors open positions against stop loss, take profit, and trailing stop levels
+                  </li>
+                  <li class="mb-2">
+                    <strong>Session Filter Hook:</strong> Automatically closes positions and prevents new entries outside allowed trading sessions
+                  </li>
+                  <li class="mb-2">
+                    <strong>Drawdown Circuit Breaker:</strong> Disables strategy if daily or weekly drawdown limits are exceeded
+                  </li>
+                </ul>
+
+                <h4 class="font-semibold mb-3 mt-6">Per-Strategy Analytics:</h4>
+                <ul style="list-style: disc; padding-left: 1.5rem;">
+                  <li class="mb-2">
+                    <strong>Equity Curve:</strong> Real-time equity tracking showing cumulative P&L over time
+                  </li>
+                  <li class="mb-2">
+                    <strong>Win Rate & Risk/Reward:</strong> Win rate percentage, average winner vs. average loser, profit factor
+                  </li>
+                  <li class="mb-2">
+                    <strong>Drawdown Analysis:</strong> Maximum drawdown, current drawdown, recovery time
+                  </li>
+                  <li class="mb-2">
+                    <strong>Signal Quality Metrics:</strong> Signal accuracy, false positive rate, signal confidence distribution
+                  </li>
+                  <li class="mb-2">
+                    <strong>Performance by Market Condition:</strong> Performance segmented by volatility, trend, and time of day
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- video -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-8">Strategy System Video Walkthrough</h2>
+
+        <div class="mx-auto" style="max-width: 1440px;">
+          <p class="text-lg mb-6 text-center">
+            This video walks through how strategies are configured, how parameters and risk settings come together, and how more advanced ideas like external models could plug in.
+          </p>
+
+          <!-- video container -->
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <source src="media/videos/Strategy configuration-2025-11-30_13.43.57.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="mt-8 card">
+            <div class="card-body">
+              <h4 class="font-semibold mb-3">Video Contents:</h4>
+              <p class="text-muted">
+                This just shows the basic and easy process of choosing a strategy and enabling parameters and saving it from the base plugins that come preinstalled with the program.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- call to action -->
+    <section class="section bg-light">
+      <div class="container text-center">
+        <h2 class="mb-6">Ready to Build Your Own Strategies?</h2>
+        <p class="text-lg mb-8 mx-auto" style="max-width: 700px;">
+          Explore the example strategies, think about how you would adjust them, and then start sketching your own ideas within the same risk rules and structure.
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="demo.html" class="btn btn-primary btn-lg">View Demo</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Get Updates</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container">
+
+      <!-- footer nav -->
+      <div class="flex flex-wrap gap-8 mb-8">
+        <div class="flex-1" style="min-width: 250px;">
+          <h4 class="text-white mb-4">TopstepJ</h4>
+          <p class="text-sm text-muted">
+            Close-source algorithmic trading platform engineered for risk-first systematic trading.
+          </p>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Platform</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="how-it-works.html" class="text-sm text-muted">How It Works</a></li>
+            <li><a href="features.html" class="text-sm text-muted">Features</a></li>
+            <li><a href="strategies.html" class="text-sm text-muted">Strategies</a></li>
+            <li><a href="demo.html" class="text-sm text-muted">Demo</a></li>
+          </ul>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Resources</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="#" class="text-sm text-muted">Documentation</a></li>
+            <li><a href="#" class="text-sm text-muted">GitHub Repository</a></li>
+            <li><a href="contact.html" class="text-sm text-muted">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- disclaimers -->
+      <div class="border-t pt-8" style="border-color: rgba(255, 255, 255, 0.1);">
+        <div class="mb-6">
+          <h5 class="text-white mb-3 font-semibold">Important Disclaimers</h5>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Educational Use Only:</strong> TopstepJ is provided as an educational tool for learning about algorithmic trading, risk management, and systematic trading approaches. It is not intended as professional trading software for live market trading without proper understanding, testing, and risk assessment.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">No Guarantee of Profits:</strong> Trading futures and derivatives involves substantial risk of loss. There is no guarantee that using TopstepJ or any trading strategy will result in profitable trades. Past performance does not guarantee future results.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Trading Risk Disclosure:</strong> Futures and options trading involves significant risk of loss and is not suitable for all investors. The high degree of leverage that is often obtainable in futures and options trading can work against you as well as for you. The use of leverage can lead to large losses as well as gains. You should carefully consider whether such trading is suitable for you in light of your financial condition.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Not Financial Advice:</strong> Nothing on this website or in the TopstepJ platform constitutes financial, investment, legal, or tax advice. The content is provided for informational and educational purposes only. You should consult with qualified professionals before making any financial decisions or engaging in trading activities.
+          </div>
+
+          <div class="text-sm text-muted">
+            <strong class="text-white">No Liability:</strong> The creators and contributors of TopstepJ are not liable for any trading losses, damages, or other consequences arising from the use of this software or information. By using TopstepJ, you acknowledge and accept all risks associated with futures trading.
+          </div>
+        </div>
+
+        <!-- copyright -->
+        <div class="text-center text-sm text-muted pt-6" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <p>&copy; 2025 TopstepJ. closed source project for educational purposes (and lot's of money).</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

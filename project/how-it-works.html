@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="event-driven trading, trading architecture, algorithmic trading pipeline, risk middleware, strategy plugins, smart money concepts, machine learning trading, trading analytics, order routing, market data normalization">
+  <title>How It Works - TopstepJ Event-Driven Trading Architecture</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- header -->
+  <header class="border-b" style="background-color: #000000;">
+    <nav class="container py-2">
+      <div class="flex items-center justify-between">
+        <!-- logo -->
+        <div class="text-white font-bold text-xl">TopstepJ</div>
+
+        <!-- mobile toggle -->
+        <button class="visible-mobile text-white" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- desktop nav -->
+        <ul class="nav hidden-mobile">
+          <li><a href="index.html" class="nav-link text-white">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link active text-white">How It Works</a></li>
+          <li><a href="features.html" class="nav-link text-white">Features</a></li>
+          <li><a href="strategies.html" class="nav-link text-white">Strategies</a></li>
+          <li><a href="demo.html" class="nav-link text-white">Demo</a></li>
+          <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- mobile nav -->
+      <ul class="nav flex-col gap-2 mt-4 visible-mobile" style="display: none;">
+        <li><a href="index.html" class="nav-link text-white">Home</a></li>
+        <li><a href="how-it-works.html" class="nav-link active text-white">How It Works</a></li>
+        <li><a href="features.html" class="nav-link text-white">Features</a></li>
+        <li><a href="strategies.html" class="nav-link text-white">Strategies</a></li>
+        <li><a href="demo.html" class="nav-link text-white">Demo</a></li>
+        <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- hero -->
+    <section class="bg-dark text-white py-16">
+      <div class="container">
+        <h1 class="text-white mb-6">How TopstepJ Works</h1>
+        <p class="text-xl text-white" style="max-width: 800px;">
+          TopstepJ uses an event-driven setup that pushes each piece of market data through the same pipeline. Before anything turns into an order, it has to pass the risk checks first.
+        </p>
+      </div>
+    </section>
+
+    <!-- intro -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">Event-Driven Architecture</h2>
+        <div class="mx-auto" style="max-width: 900px;">
+          <p class="text-lg mb-4">
+            Instead of a pile of one-off scripts or manual clicks, TopstepJ treats everything as events flowing through a pipeline. Market data comes in, moves through each stage in order, and you always know what step it’s at.
+          </p>
+          <p class="text-lg mb-4">
+            The architecture splits things like data ingestion, risk checks, strategy logic, and order routing into their own components. That makes it easier to log, debug, and tune each part without breaking the rest.
+          </p>
+          <p class="text-lg">
+            The goal is a platform that is safer and more disciplined to use, but also easier to understand and tweak if you are the one building or testing strategies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- steps -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-8">The Event Pipeline</h2>
+        <p class="text-center text-lg mb-12 mx-auto" style="max-width: 700px;">
+          Here is the basic path each market event follows in TopstepJ, from the moment data comes in to the point where you see fills and analytics.
+        </p>
+
+        <div class="mx-auto" style="max-width: 900px;">
+
+          <!-- step 1 -->
+          <div class="card mb-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white rounded-full flex items-center justify-center font-bold" style="min-width: 48px; min-height: 48px; width: 48px; height: 48px;">
+                1
+              </div>
+              <div>
+                <h3 class="mb-3">Ingestion of Market Data</h3>
+                <p class="mb-3">
+                  Market data (tick data, order book updates, trade executions) comes in from broker APIs, data feeds, or simulation sources. This raw data gets captured and queued for processing.
+                </p>
+                <p class="text-muted">
+                  <strong>Key components:</strong> Data connectors, message queues, raw event streams
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 2 -->
+          <div class="card mb-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white rounded-full flex items-center justify-center font-bold" style="min-width: 48px; min-height: 48px; width: 48px; height: 48px;">
+                2
+              </div>
+              <div>
+                <h3 class="mb-3">Normalization</h3>
+                <p class="mb-3">
+                  Raw market data gets normalized into a standardized format. Different brokers and data sources have different schemas—normalization makes sure all downstream components work with consistent data structures.
+                </p>
+                <p class="text-muted">
+                  <strong>Key components:</strong> Data transformers, schema validators, timestamp synchronization
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 3 -->
+          <div class="card mb-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white rounded-full flex items-center justify-center font-bold" style="min-width: 48px; min-height: 48px; width: 48px; height: 48px;">
+                3
+              </div>
+              <div>
+                <h3 class="mb-3">Risk Middleware</h3>
+                <p class="mb-3">
+                  Before any strategy logic runs, normalized data passes through the risk middleware layer. This is where we enforce account limits, position sizing rules, daily loss limits, and session filters. If you violate risk rules, the event gets flagged or halted.
+                </p>
+                <p class="text-muted">
+                  <strong>Key components:</strong> Risk engine, position tracking, loss limit monitors, time filters
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 4 -->
+          <div class="card mb-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white rounded-full flex items-center justify-center font-bold" style="min-width: 48px; min-height: 48px; width: 48px; height: 48px;">
+                4
+              </div>
+              <div>
+                <h3 class="mb-3">Strategy Plugins and Signal Generation</h3>
+                <p class="mb-3">
+                  Events that pass risk validation go to active strategy plugins. Each strategy analyzes the data, applies its logic (technical indicators, SMC patterns, ML model predictions), and generates trading signals (buy, sell, hold).
+                </p>
+                <p class="text-muted">
+                  <strong>Key components:</strong> Strategy manager, plugin system, signal generators, SMC and ML modules
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 5 -->
+          <div class="card mb-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white rounded-full flex items-center justify-center font-bold" style="min-width: 48px; min-height: 48px; width: 48px; height: 48px;">
+                5
+              </div>
+              <div>
+                <h3 class="mb-3">Order Routing</h3>
+                <p class="mb-3">
+                  Valid trading signals get converted into orders and routed to the broker or execution venue. The order router handles order formatting, submission, and acknowledgment tracking.
+                </p>
+                <p class="text-muted">
+                  <strong>Key components:</strong> Order manager, broker API integrations, execution tracking
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 6 -->
+          <div class="card mb-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white rounded-full flex items-center justify-center font-bold" style="min-width: 48px; min-height: 48px; width: 48px; height: 48px;">
+                6
+              </div>
+              <div>
+                <h3 class="mb-3">Analytics and Feedback Loops</h3>
+                <p class="mb-3">
+                  After execution, trade results get captured and analyzed. Performance metrics (P&L, win rate, drawdown) are calculated per strategy and per account. This data feeds back into the system for optimization and reporting.
+                </p>
+                <p class="text-muted">
+                  <strong>Key components:</strong> Analytics engine, performance tracking, reporting dashboards, feedback loops
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- diagram -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">System Architecture Diagram</h2>
+        <p class="text-center text-lg mb-12 mx-auto" style="max-width: 700px;">
+          This diagram is a big-picture view of how the main parts of TopstepJ talk to each other inside the event-driven design.
+        </p>
+
+        <div class="mx-auto" style="max-width: 1000px;">
+          <img
+            src="media/images/topstepx_architecture_diagram.png"
+            alt="TopstepJ system architecture showing normalization layer, risk core, middleware, strategy plugins, SMC and ML components, and analytics"
+            class="rounded-lg shadow-lg w-full"
+          >
+          <div class="mt-6 text-center">
+            <p class="text-muted mb-4">
+              It shows how data flows from ingestion through normalization, risk checks, strategy execution, order routing, and analytics feedback.
+            </p>
+            <ul style="list-style: disc; text-align: left; max-width: 700px; margin: 0 auto; padding-left: 1.5rem;">
+              <li class="mb-2"><strong>Normalization Layer:</strong> Converts raw data to standardized format</li>
+              <li class="mb-2"><strong>Risk Core:</strong> Enforces trading limits and risk rules</li>
+              <li class="mb-2"><strong>Middleware:</strong> Coordinates between components</li>
+              <li class="mb-2"><strong>Strategy Plugins:</strong> Modular, extensible strategy system</li>
+              <li class="mb-2"><strong>SMC/ML Components:</strong> Smart Money Concepts and machine learning integrations</li>
+              <li class="mb-2"><strong>Strategy & Account Analytics:</strong> Real-time performance monitoring and reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- docs -->
+    <section class="section bg-light">
+      <div class="container">
+        <h2 class="text-center mb-8">Dive Deeper into the Architecture</h2>
+        <p class="text-center text-lg mb-12 mx-auto" style="max-width: 700px;">
+          If you want more technical detail, code examples, or setup help, these are the places you would go next in a real project.
+        </p>
+
+        <div class="mx-auto" style="max-width: 900px;">
+          <div class="flex flex-col gap-6">
+
+            <!-- doc 1 -->
+            <div class="card">
+              <div class="flex items-start gap-4">
+                <div>
+                  <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                </div>
+                <div style="flex: 1;">
+                  <h3 class="mb-2">Architecture Documentation</h3>
+                  <p class="mb-3 text-muted">
+                    High-level breakdown of TopstepJ’s event-driven architecture with diagrams and explanations of how the main components fit together.
+                  </p>
+                  <a href="#" class="text-primary font-medium">View Architecture Docs &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- doc 2 -->
+            <div class="card">
+              <div class="flex items-start gap-4">
+                <div>
+                  <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </div>
+                <div style="flex: 1;">
+                  <h3 class="mb-2">GitHub Repository</h3>
+                  <p class="mb-3 text-muted">
+                    Custom backtester built for TopstepJ. Note: Repository is currently private - coming soon.
+                  </p>
+                  <a href="https://github.com/blindsipher/TopStepB--ackstester-" class="text-primary font-medium" target="_blank" rel="noopener noreferrer">Visit GitHub Repo &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- doc 3 -->
+            <div class="card">
+              <div class="flex items-start gap-4">
+                <div>
+                  <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <polyline points="22 7 12 13 2 7"></polyline>
+                  </svg>
+                </div>
+                <div style="flex: 1;">
+                  <h3 class="mb-2">API Reference</h3>
+                  <p class="mb-3 text-muted">
+                    Reference material for developers who want to plug in custom strategies, middleware, or other integrations.
+                  </p>
+                  <a href="https://gateway.docs.projectx.com/docs/intro" class="text-primary font-medium" target="_blank" rel="noopener noreferrer">View API Docs &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- call to action -->
+    <section class="section">
+      <div class="container text-center">
+        <h2 class="mb-6">Ready to See It in Action?</h2>
+        <p class="text-lg mb-8 mx-auto" style="max-width: 700px;">
+          Once you understand the basic flow, the next step is to look at what features are available and how they show up in the actual platform.
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="features.html" class="btn btn-primary btn-lg">Explore Features</a>
+          <a href="demo.html" class="btn btn-outline btn-lg">Watch Demo</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container">
+
+      <!-- footer nav -->
+      <div class="flex flex-wrap gap-8 mb-8">
+        <div class="flex-1" style="min-width: 250px;">
+          <h4 class="text-white mb-4">TopstepJ</h4>
+          <p class="text-sm text-muted">
+            Close-source algorithmic trading platform engineered for risk-first systematic trading.
+          </p>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Platform</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="how-it-works.html" class="text-sm text-muted">How It Works</a></li>
+            <li><a href="features.html" class="text-sm text-muted">Features</a></li>
+            <li><a href="strategies.html" class="text-sm text-muted">Strategies</a></li>
+            <li><a href="demo.html" class="text-sm text-muted">Demo</a></li>
+          </ul>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Resources</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="#" class="text-sm text-muted">Documentation</a></li>
+            <li><a href="#" class="text-sm text-muted">GitHub Repository</a></li>
+            <li><a href="contact.html" class="text-sm text-muted">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- disclaimers -->
+      <div class="border-t pt-8" style="border-color: rgba(255, 255, 255, 0.1);">
+        <div class="mb-6">
+          <h5 class="text-white mb-3 font-semibold">Important Disclaimers</h5>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Educational Use Only:</strong> TopstepJ is provided as an educational tool for learning about algorithmic trading, risk management, and systematic trading approaches. It is not intended as professional trading software for live market trading without proper understanding, testing, and risk assessment.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">No Guarantee of Profits:</strong> Trading futures and derivatives involves substantial risk of loss. There is no guarantee that using TopstepJ or any trading strategy will result in profitable trades. Past performance does not guarantee future results.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Trading Risk Disclosure:</strong> Futures and options trading involves significant risk of loss and is not suitable for all investors. The high degree of leverage that is often obtainable in futures and options trading can work against you as well as for you. The use of leverage can lead to large losses as well as gains. You should carefully consider whether such trading is suitable for you in light of your financial condition.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Not Financial Advice:</strong> Nothing on this website or in the TopstepJ platform constitutes financial, investment, legal, or tax advice. The content is provided for informational and educational purposes only. You should consult with qualified professionals before making any financial decisions or engaging in trading activities.
+          </div>
+
+          <div class="text-sm text-muted">
+            <strong class="text-white">No Liability:</strong> The creators and contributors of TopstepJ are not liable for any trading losses, damages, or other consequences arising from the use of this software or information. By using TopstepJ, you acknowledge and accept all risks associated with futures trading.
+          </div>
+        </div>
+
+        <!-- copyright -->
+        <div class="text-center text-sm text-muted pt-6" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <p>&copy; 2025 TopstepJ. Close-source project for educational purposes.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
