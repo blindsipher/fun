@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - TopstepJ Trading Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- header -->
+  <header class="border-b" style="background-color: #000000;">
+    <nav class="container py-2">
+      <div class="flex items-center justify-between">
+        <!-- logo -->
+        <div class="text-white font-bold text-xl">TopstepJ</div>
+
+        <!-- mobile toggle -->
+        <button class="visible-mobile text-white" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- desktop nav -->
+        <ul class="nav hidden-mobile">
+          <li><a href="index.html" class="nav-link text-white">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link text-white">How It Works</a></li>
+          <li><a href="features.html" class="nav-link text-white">Features</a></li>
+          <li><a href="strategies.html" class="nav-link text-white">Strategies</a></li>
+          <li><a href="demo.html" class="nav-link text-white">Demo</a></li>
+          <li><a href="contact.html" class="nav-link active text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- mobile nav -->
+      <ul class="nav flex-col gap-2 mt-4 visible-mobile" style="display: none;">
+        <li><a href="index.html" class="nav-link text-white">Home</a></li>
+        <li><a href="how-it-works.html" class="nav-link text-white">How It Works</a></li>
+        <li><a href="features.html" class="nav-link text-white">Features</a></li>
+        <li><a href="strategies.html" class="nav-link text-white">Strategies</a></li>
+        <li><a href="demo.html" class="nav-link text-white">Demo</a></li>
+        <li><a href="contact.html" class="nav-link active text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- contact hero -->
+    <section class="bg-dark text-white py-16">
+      <div class="container">
+        <h1 class="text-white text-center mb-6">Stay Connected with TopstepJ</h1>
+        <div class="mx-auto text-center" style="max-width: 700px;">
+          <p class="text-xl text-white">
+            If you want updates on how this project evolves, you can drop your info here and I will use it for release notes and important changes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- intro -->
+    <section class="section bg-light">
+      <div class="container">
+        <div class="mx-auto" style="max-width: 800px;">
+          <h2 class="text-center mb-8">What You'll Receive</h2>
+
+          <div class="mb-8">
+            <p class="text-lg mb-4">
+              By signing up, you stay in the loop on what I am building and get a mix of practical updates and educational material related to this platform and algorithmic trading in general.
+            </p>
+            <p class="text-lg mb-6">
+              I try to keep things reasonable. Here is the general type of stuff you would get:
+            </p>
+
+            <ul class="mb-6" style="list-style: disc; padding-left: 1.5rem;">
+              <li class="mb-3 text-lg">
+                <strong>Release Notes:</strong> Detailed updates on new features, improvements, and bug fixes
+              </li>
+              <li class="mb-3 text-lg">
+                <strong>Platform Updates:</strong> Important announcements about TopstepJ development and roadmap changes
+              </li>
+              <li class="mb-3 text-lg">
+                <strong>Educational Content:</strong> Guides, tutorials, and best practices for algorithmic trading
+              </li>
+              <li class="mb-3 text-lg">
+                <strong>Community Highlights:</strong> Featured strategies, use cases, and success stories from the community
+              </li>
+            </ul>
+
+            <p class="text-lg">
+               <strong>Frequency:</strong> Expect occasional emails when there is something actually worth sharing. No spam, and your info is not getting sold off to anyone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- form section -->
+    <section class="section">
+      <div class="container">
+        <div class="mx-auto" style="max-width: 600px;">
+          <h2 class="text-center mb-8">Sign Up for Updates</h2>
+
+          <!-- form -->
+          <form id="contactForm" class="bg-light rounded-lg shadow-lg p-8">
+
+            <!-- name -->
+            <div class="mb-6">
+              <label for="name" class="block mb-2 font-semibold">
+                Name <span class="text-error">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                aria-required="true"
+                aria-describedby="nameHelp"
+                class="w-full px-4 py-3 border rounded-lg"
+                style="border: 1px solid #ccc;"
+                placeholder="Enter your full name"
+              >
+              <small id="nameHelp" class="text-sm text-muted">Required field</small>
+            </div>
+
+            <!-- email -->
+            <div class="mb-6">
+              <label for="email" class="block mb-2 font-semibold">
+                Email Address <span class="text-error">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                aria-describedby="emailHelp"
+                class="w-full px-4 py-3 border rounded-lg"
+                style="border: 1px solid #ccc;"
+                placeholder="your.email@example.com"
+              >
+              <small id="emailHelp" class="text-sm text-muted">Required field. We'll never share your email with anyone else(Unless they pay us a lot of money).</small>
+            </div>
+
+            <!-- message -->
+            <div class="mb-6">
+              <label for="message" class="block mb-2 font-semibold">
+                Message (Optional)
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                aria-describedby="messageHelp"
+                class="w-full px-4 py-3 border rounded-lg"
+                style="border: 1px solid #ccc;"
+                placeholder="Tell us about your interest in TopstepJ or ask us a question..."
+              ></textarea>
+              <small id="messageHelp" class="text-sm text-muted">Optional. Share your thoughts, questions, or interests.</small>
+            </div>
+
+            <!-- errors -->
+            <div id="errorSummary" class="mb-4 p-4 rounded-lg" style="display: none; background-color: #fee; border: 1px solid #fcc;">
+              <strong class="text-error">Please correct the following errors:</strong>
+              <ul id="errorList" style="list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem;"></ul>
+            </div>
+
+            <!-- submit -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Submit
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- signup -->
+    <section class="section bg-light">
+      <div class="container">
+        <div class="mx-auto" style="max-width: 800px;">
+          <h2 class="text-center mb-8">How the Signup Process Works</h2>
+
+          <ol class="mb-8" style="list-style: decimal; padding-left: 1.5rem;">
+            <li class="mb-4 text-lg">
+              <strong>Fill out the form above</strong> with your name and email address. Optionally, include a message to let us know what interests you about TopstepJ.
+            </li>
+            <li class="mb-4 text-lg">
+              <strong>Submit your information</strong> by clicking the "Submit" button. Our system will validate your entries to ensure everything is correct.
+            </li>
+            <li class="mb-4 text-lg">
+              <strong>Receive a confirmation</strong> showing your submitted information. This confirms we've recieved your signup request.
+            </li>
+            <li class="mb-4 text-lg">
+              <strong>Check your inbox</strong> for a welcome email (in a production system you would receive a confirmation email with a link to verify your subscription).
+            </li>
+            <li class="mb-4 text-lg">
+              <strong>Stay informed</strong> as we send you updates, release notes, and educational content about TopstepJ and algorithmic trading.
+            </li>
+          </ol>
+
+          <p class="text-center text-lg">
+            Have questions? Feel free to include them in the message field above, and we'll get back to you as soon as possible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container">
+
+      <!-- footer nav -->
+      <div class="flex flex-wrap gap-8 mb-8">
+        <div class="flex-1" style="min-width: 250px;">
+          <h4 class="text-white mb-4">TopstepJ</h4>
+          <p class="text-sm text-muted">
+            Closed-source algorithmic trading platform engineered for risk-first systematic trading.
+          </p>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Platform</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="how-it-works.html" class="text-sm text-muted">How It Works</a></li>
+            <li><a href="features.html" class="text-sm text-muted">Features</a></li>
+            <li><a href="strategies.html" class="text-sm text-muted">Strategies</a></li>
+            <li><a href="demo.html" class="text-sm text-muted">Demo</a></li>
+          </ul>
+        </div>
+
+        <div style="min-width: 150px;">
+          <h5 class="text-white mb-3">Resources</h5>
+          <ul class="flex flex-col gap-2">
+            <li><a href="#" class="text-sm text-muted">Documentation</a></li>
+            <li><a href="#" class="text-sm text-muted">GitHub Repository</a></li>
+            <li><a href="contact.html" class="text-sm text-muted">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- disclaimers -->
+      <div class="border-t pt-8" style="border-color: rgba(255, 255, 255, 0.1);">
+        <div class="mb-6">
+          <h5 class="text-white mb-3 font-semibold">Important Disclaimers</h5>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Educational Use Only:</strong> TopstepJ is provided as an educational tool for learning about algorithmic trading, risk management, and systematic trading approaches. It is not intended as professional trading software for live market trading without proper understanding, testing, and risk assessment.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">No Guarantee of Profits:</strong> Trading futures and derivatives involves substantial risk of loss. There is no guarantee that using TopstepJ or any trading strategy will result in profitable trades. Past performance does not guarantee future results.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Trading Risk Disclosure:</strong> Futures and options trading involves significant risk of loss and is not suitable for all investors. The high degree of leverage that is often obtainable in futures and options trading can work against you as well as for you. The use of leverage can lead to large losses as well as gains. You should carefully consider whether such trading is suitable for you in light of your financial condition.
+          </div>
+
+          <div class="text-sm text-muted mb-3">
+            <strong class="text-white">Not Financial Advice:</strong> Nothing on this website or in the TopstepJ platform constitutes financial, investment, legal, or tax advice. The content is provided for informational and educational purposes only. You should consult with qualified professionals before making any financial decisions or engaging in trading activities.
+          </div>
+
+          <div class="text-sm text-muted">
+            <strong class="text-white">No Liability:</strong> The creators and contributors of TopstepJ are not liable for any trading losses, damages, or other consequences arising from the use of this software or information. By using TopstepJ, you acknowledge and accept all risks associated with futures trading.
+          </div>
+        </div>
+
+        <!-- copyright -->
+        <div class="text-center text-sm text-muted pt-6" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <p>&copy; 2025 TopstepJ. Close-source project for educational purposes.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- form js -->
+  <script>
+    // form refs
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const errorSummary = document.getElementById('errorSummary');
+    const errorList = document.getElementById('errorList');
+
+    // submit handler
+    form.addEventListener('submit', function(event) {
+      // stop default
+      event.preventDefault();
+
+      // clear errors
+      errorList.innerHTML = '';
+      errorSummary.style.display = 'none';
+
+      // errors list
+      const errors = [];
+
+      // read values
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
+
+      // check name
+      if (name === '') {
+        errors.push('Name is required');
+        nameInput.style.borderColor = '#f44336';
+      } else {
+        nameInput.style.borderColor = '#ccc';
+      }
+
+      // check email
+      if (email === '') {
+        errors.push('Email is required');
+        emailInput.style.borderColor = '#f44336';
+      } else if (!isValidEmail(email)) {
+        errors.push('Email must be in a valid format (e.g., user@example.com)');
+        emailInput.style.borderColor = '#f44336';
+      } else {
+        emailInput.style.borderColor = '#ccc';
+      }
+
+      // if errors
+      if (errors.length > 0) {
+        // show summary
+        errors.forEach(function(error) {
+          const li = document.createElement('li');
+          li.textContent = error;
+          errorList.appendChild(li);
+        });
+        errorSummary.style.display = 'block';
+
+        // scroll to summary
+        errorSummary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        return false;
+      }
+
+      // all good
+      const csvOutput = name + ', ' + email + (message ? ', ' + message : '');
+      alert(csvOutput);
+
+      // optional reset
+      // form.reset()
+
+      return false;
+    });
+
+    // email helper
+    function isValidEmail(email) {
+      // email regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    // realtime validation
+    nameInput.addEventListener('blur', function() {
+      if (nameInput.value.trim() === '') {
+        nameInput.style.borderColor = '#f44336';
+      } else {
+        nameInput.style.borderColor = '#ccc';
+      }
+    });
+
+    emailInput.addEventListener('blur', function() {
+      const email = emailInput.value.trim();
+      if (email === '' || !isValidEmail(email)) {
+        emailInput.style.borderColor = '#f44336';
+      } else {
+        emailInput.style.borderColor = '#ccc';
+      }
+    });
+  </script>
+
+</body>
+</html>
